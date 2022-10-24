@@ -1,6 +1,6 @@
 module.exports = {
   extends: ['next', 'prettier', 'plugin:chai-friendly/recommended'],
-  plugins: ['prettier', 'simple-import-sort', 'lodash', 'chai-friendly'],
+  plugins: ['prettier', 'simple-import-sort', 'lodash', 'chai-friendly', 'typescript-plugin-css-modules'],
   settings: {
     react: {
       version: 'detect',
