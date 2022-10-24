@@ -3,6 +3,8 @@ import styled from 'styled-components'
 import Link from 'next/link'
 import React from 'react'
 import { Article as ArticleType } from '../types'
+import { Button } from '../components'
+
 
 type ArticleProps = {
   article: ArticleType
@@ -31,11 +33,15 @@ const ArticleWrapperDiv = styled.div`
     overflow: hidden;
     margin-right: 30px;
     padding: 5em;
+    align-self: baseline;
 `
 const ArticleImg = styled.img`
   object-fit: contain;
-width: 20vmax;
+  width: 20vmax;
 
+    &:hover {
+    cursor: pointer;
+  }
 `
 const Header = styled.h4`
   font-family: 'Roboto';
@@ -68,11 +74,14 @@ const LinkText = styled(Link)`
   left: 1077px;
   top: 320.5px;
 `
-const ButtomDiv = styled.div`
+const BottomDiv = styled.div`
     display: flex;
     flex-direction: row;
     align-items: baseline;
     justify-content: space-between;
+`
+const ButtonDiv = styled(BottomDiv)`
+
 `
 
 export default function Article({ article }: ArticleProps) {
@@ -88,20 +97,25 @@ export default function Article({ article }: ArticleProps) {
     let formattedDate = new Date(article.published_date)
   return (
     <ArticleWrapperDiv>
-      <Link href={article.permalink} passHref={true}>
+      <Link href={article.permalink} passHref={true} target="_blank">
+        <a target="_blank" rel="noopener noreferrer">
         <ArticleImg src={imageUrl} alt={altText} />
+        </a>
       </Link>
         <Topic>{true && article.topics[0].name}</Topic>
       <Header>{article.headline}</Header>
         <AuthorText>{article.authors[0].display_name}</AuthorText>
-        <ButtomDiv>
+        <BottomDiv>
         <DateText>{formattedDate.toDateString()}</DateText>
         <Text>{true && article.primary_section}</Text>
         {/*  @TO-DO clean up styling */}
       <LinkText href={article.permalink}>
         <a>Go Deeper <SvgArrow/> </a>
       </LinkText>
-        </ButtomDiv>
+        </BottomDiv>
+        <ButtonDiv>
+         <Button/>
+        </ButtonDiv>
     </ArticleWrapperDiv>
   )
 }
