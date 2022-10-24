@@ -20,13 +20,14 @@ We're not trying to get you to work for us for free, so please don't spend more 
 If you can't get to a certain part of the exercise, add it to a `TODO` doc that explains how you'd complete it.
 
 ## Getting started
-
+<!-- @TO-DO README.md line 24, index.html does not exist. -->
 1. In index.html, rebuild the mocks in the Figma design in semantic HTML, CSS and JS.
 1. First make a call to the `stream endpoint` to retrieve an array of the 10 lastest story ids for Axios.com.
 1. For each story id, make another call to the `content endpoint` to retrieve the data for each story.
 1. For each slide in the carousel, display the following:
 - The `headline` of the story.
 - The `display name` of the author (note that this text is deliberately left out of the Figma design, so we leave it to you to make your own stylistic choice for its placement).
+ <!-- README.md line 30, `section` does not exist. -->
 - The `section` label of the story.
 - The `primary_image` of the story.
 - The `published date` of the story.
